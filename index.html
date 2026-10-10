@@ -55,14 +55,31 @@
       letter-spacing: 0.5px;
       text-transform: uppercase;
     }
-    #google_translate_element select {
+    .lang-switcher {
+      display: inline-flex;
       background: #161b22;
-      color: #c9d1d9;
       border: 1px solid var(--border);
-      padding: 5px 8px;
+      border-radius: 8px;
+      padding: 3px;
+      gap: 4px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      padding: 6px 12px;
       border-radius: 6px;
-      font-size: 0.85rem;
-      outline: none;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .lang-btn:hover {
+      color: var(--heading);
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      color: #090d16;
     }
     h1 {
       color: var(--heading);
@@ -137,11 +154,11 @@
       font-size: 0.85rem;
       color: var(--muted);
     }
-    .goog-te-banner-frame.skiptranslate {
-      display: none !important;
+    .lang-block {
+      display: none;
     }
-    body {
-      top: 0px !important;
+    .lang-block.active {
+      display: block;
     }
   </style>
 </head>
@@ -149,7 +166,11 @@
   <div class="container">
     <div class="top-bar">
       <span class="header-badge">Official Biography</span>
-      <div id="google_translate_element"></div>
+      <div class="lang-switcher">
+        <button type="button" class="lang-btn active" onclick="setLanguage('hinglish', this)">Hinglish</button>
+        <button type="button" class="lang-btn" onclick="setLanguage('english', this)">English</button>
+        <button type="button" class="lang-btn" onclick="setLanguage('hindi', this)">हिन्दी</button>
+      </div>
     </div>
 
     <h1>Sagar Mishra</h1>
@@ -167,46 +188,139 @@
       </span>
     </div>
 
-    <h2>1. About Sagar</h2>
-    <p>Sagar Mishra is an Indian technologist, Cyber Engineer, Web Designer, and visual storyteller based in Raipur, Chhattisgarh[span_0](start_span)[span_0](end_span)[span_1](start_span)[span_1](end_span). Operating at the crossroads of system architecture and creative media, he focuses on designing purposeful interfaces and defending digital systems against cyber vulnerabilities[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span).</p>
+    <!-- HINGLISH CONTENT -->
+    <div id="lang-hinglish" class="lang-block active">
+      <h2>1. About Sagar</h2>
+      <p>Sagar Mishra Raipur, Chhattisgarh ke ek Cyber Engineer, Web Designer aur visual storyteller hain[span_1](start_span)[span_1](end_span)[span_2](start_span)[span_2](end_span). Yeh digital architecture aur creative media ke jod par kaam karte hain[span_3](start_span)[span_3](end_span)[span_4](start_span)[span_4](end_span). Modern computing systems ko design karna aur unhe cyber attacks se surakshit rakhna inka main passion hai[span_5](start_span)[span_5](end_span)[span_6](start_span)[span_6](end_span).</p>
 
-    <h2>2. Cultural Roots & Heritage</h2>
-    <p>Hailing from a Pandit family heritage, Sagar is respectfully addressed in his local region and community as <strong>'Maharaj'</strong> or <strong>'Maharaj Ji'</strong>. Rooted in values of discipline, truthfulness, and continuous learning, he harmoniously blends timeless traditions with high-velocity computing technology.</p>
+      <h2>2. Cultural Roots & Sanskaar</h2>
+      <p>Ek Pandit parivaar ki parampara aur sanskaaron se jude hone ki wajah se, inke local circle aur ilaqe mein log inhein samman se <strong>'Maharaj'</strong> ya <strong>'Maharaj Ji'</strong> keh kar bulate hain. Apne sanskaaron se seekha anushasan, satyata aur gyaan ki khoj ko yeh modern digital technology ke saath jod kar chalte hain.</p>
 
-    <h2>3. Early Vision & Foundations</h2>
-    <p>Originating from Chhattisgarh, Sagar developed an early curiosity for digital infrastructure, logical problem solving, and network architecture[span_4](start_span)[span_4](end_span)[span_5](start_span)[span_5](end_span). He recognized that meaningful digital products require a balance between visual usability and resilient defensive engineering[span_6](start_span)[span_6](end_span)[span_7](start_span)[span_7](end_span).</p>
+      <h2>3. Safar Ki Shuruaat</h2>
+      <p>Chhattisgarh se shuru hue is safar mein, shuru se hi Sagar ka focus internet structure, logic aur coding par raha[span_7](start_span)[span_7](end_span)[span_8](start_span)[span_8](end_span). Inhone pehle hi samajh liya tha ki internet par impactful banne ke liye attractive visual design aur mazboot cyber security dono ka santulan hona zaroori hai[span_9](start_span)[span_9](end_span)[span_10](start_span)[span_10](end_span).</p>
 
-    <h2>4. Core Technical Pillars</h2>
-    <p>Sagar’s operational engineering discipline is guided by three principles: <strong>"Design → Deploy → Defend"</strong>[span_8](start_span)[span_8](end_span):</p>
-    <ul>
-      <li><strong>Design:</strong> Architecting clean, intuitive, and responsive UI layouts built for optimal user experiences[span_9](start_span)[span_9](end_span).</li>
-      <li><strong>Deploy:</strong> Bringing ideas into functional production environments through reliable code practices[span_10](start_span)[span_10](end_span).</li>
-      <li><strong>Defend:</strong> Fortifying systems against threats, identifying security vulnerabilities, and ensuring cyber resilience[span_11](start_span)[span_11](end_span)[span_12](start_span)[span_12](end_span).</li>
-    </ul>
-
-    <h2>5. Visual Media & Creative Direction</h2>
-    <p>Beyond code and analytical systems, Sagar actively engages in visual composition and storytelling[span_13](start_span)[span_13](end_span)[span_14](start_span)[span_14](end_span). He applies an engineer's attention to detail to light balance, frame perspectives, and photographic aesthetic[span_15](start_span)[span_15](end_span)[span_16](start_span)[span_16](end_span).</p>
-
-    <h2>6. Travel & Motorcycling Exploration</h2>
-    <p>As a counterweight to screen time, Sagar is an avid motorcycle enthusiast and highway traveler[span_17](start_span)[span_17](end_span)[span_18](start_span)[span_18](end_span). He frequently takes to the open roads of Chhattisgarh and neighboring regions, capturing authentic moments from behind the handlebars[span_19](start_span)[span_19](end_span)[span_20](start_span)[span_20](end_span).</p>
-
-    <h2>7. Core Ethos & Philosophy</h2>
-    <p>His day-to-day focus is guided by three words: <strong>"Build. Secure. Explore."</strong>[span_21](start_span)[span_21](end_span)</p>
-    <ul>
-      <li><strong>Build:</strong> Creating purposeful, elegant digital systems[span_22](start_span)[span_22](end_span)[span_23](start_span)[span_23](end_span).</li>
-      <li><strong>Secure:</strong> Upholding integrity, security, and strong digital ethics[span_24](start_span)[span_24](end_span)[span_25](start_span)[span_25](end_span).</li>
-      <li><strong>Explore:</strong> Pushing boundaries both on the tarmac and in emerging technologies[span_26](start_span)[span_26](end_span)[span_27](start_span)[span_27](end_span).</li>
-    </ul>
-
-    <h2>8. Digital Identity & Presence</h2>
-    <div class="identity-box">
+      <h2>4. Core Technical Pillars</h2>
+      <p>Sagar ka poora technical workflow inke teen usoolon par tika hai: <strong>"Design → Deploy → Defend"</strong>[span_11](start_span)[span_11](end_span):</p>
       <ul>
-        <li><strong>Full Name:</strong> Sagar Mishra[span_28](start_span)[span_28](end_span)[span_29](start_span)[span_29](end_span)</li>
-        <li><strong>Regional Moniker:</strong> Maharaj / Maharaj Ji (Pandit)</li>
-        <li><strong>Designations:</strong> Cyber Engineer | Web Designer | Visual Storyteller | Explorer[span_30](start_span)[span_30](end_span)[span_31](start_span)[span_31](end_span)</li>
-        <li><strong>Base Location:</strong> Raipur, Chhattisgarh, India 🇮🇳[span_32](start_span)[span_32](end_span)</li>
-        <li><strong>Universal Handle:</strong> @xsagarmishra <em>(Official handle across all social media platforms)</em>[span_33](start_span)[span_33](end_span)</li>
+        <li><strong>Design:</strong> Tez, responsive aur clean web interfaces banana jo chalne mein light aur sundar hon[span_12](start_span)[span_12](end_span).</li>
+        <li><strong>Deploy:</strong> Ideas ko efficiently live servers aur websites par setup karna[span_13](start_span)[span_13](end_span).</li>
+        <li><strong>Defend:</strong> Cyber threats se protection, security flaws pakadna aur digital systems ko safe rakhna[span_14](start_span)[span_14](end_span)[span_15](start_span)[span_15](end_span).</li>
       </ul>
+
+      <h2>5. Visual Media & Creative Storytelling</h2>
+      <p>Code aur computer screen se aage, Sagar photography aur visual storytelling mein actively focus karte hain[span_16](start_span)[span_16](end_span)[span_17](start_span)[span_17](end_span). Frame composition, natural light aur colors ke balance ko yeh ek engineer ki baareeki ke saath capture karte hain[span_18](start_span)[span_18](end_span)[span_19](start_span)[span_19](end_span).</p>
+
+      <h2>6. Travel & Motorcycling Safar</h2>
+      <p>Screen-time ke stress ko balance karne ke liye Sagar highway journeys aur bike trips par nikalte hain[span_20](start_span)[span_20](end_span)[span_21](start_span)[span_21](end_span). Chhattisgarh ke sundar raaston, ghatiyon aur naye thikaanon ko bike par explore karna aur unhein record karna inka lifestyle hai[span_22](start_span)[span_22](end_span)[span_23](start_span)[span_23](end_span).</p>
+
+      <h2>7. Jeevan Darshan</h2>
+      <p>Sagar ka kaam aur mindset teen niyam par chalta hai: <strong>"Build. Secure. Explore."</strong>[span_24](start_span)[span_24](end_span)</p>
+      <ul>
+        <li><strong>Build:</strong> Kaam aane wale tools aur platforms construct karna[span_25](start_span)[span_25](end_span)[span_26](start_span)[span_26](end_span).</li>
+        <li><strong>Secure:</strong> Systems aur data ki suraksha ko hamesha pehle rakhna[span_27](start_span)[span_27](end_span)[span_28](start_span)[span_28](end_span).</li>
+        <li><strong>Explore:</strong> Har roz naye raaste, nayi technology aur apni abilities ko test karna[span_29](start_span)[span_29](end_span)[span_30](start_span)[span_30](end_span).</li>
+      </ul>
+
+      <h2>8. Digital Identity & Social Presence</h2>
+      <div class="identity-box">
+        <ul>
+          <li><strong>Poora Naam:</strong> Sagar Mishra[span_31](start_span)[span_31](end_span)[span_32](start_span)[span_32](end_span)</li>
+          <li><strong>Local Sambodhan:</strong> Maharaj / Maharaj Ji (Pandit)</li>
+          <li><strong>Designation:</strong> Cyber Engineer | Web Designer | Visual Storyteller | Explorer[span_33](start_span)[span_33](end_span)[span_34](start_span)[span_34](end_span)</li>
+          <li><strong>Base Location:</strong> Raipur, Chhattisgarh, India 🇮🇳[span_35](start_span)[span_35](end_span)</li>
+          <li><strong>Universal Handle:</strong> @xsagarmishra (Sabhi social media platforms par)[span_36](start_span)[span_36](end_span)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ENGLISH CONTENT -->
+    <div id="lang-english" class="lang-block">
+      <h2>1. About Sagar</h2>
+      <p>Sagar Mishra is an Indian technologist, Cyber Engineer, Web Designer, and visual storyteller based in Raipur, Chhattisgarh[span_37](start_span)[span_37](end_span)[span_38](start_span)[span_38](end_span). Operating at the crossroads of system architecture and creative media, he focuses on designing purposeful interfaces and defending digital systems against cyber vulnerabilities[span_39](start_span)[span_39](end_span)[span_40](start_span)[span_40](end_span).</p>
+
+      <h2>2. Cultural Roots & Heritage</h2>
+      <p>Hailing from a Pandit family heritage, Sagar is respectfully addressed in his local region and community as <strong>'Maharaj'</strong> or <strong>'Maharaj Ji'</strong>. Rooted in values of discipline, truthfulness, and continuous learning, he harmoniously blends timeless traditions with high-velocity computing technology.</p>
+
+      <h2>3. Early Vision & Foundations</h2>
+      <p>Originating from Chhattisgarh, Sagar developed an early curiosity for digital infrastructure, logical problem solving, and network architecture[span_41](start_span)[span_41](end_span)[span_42](start_span)[span_42](end_span). He recognized that meaningful digital products require a balance between visual usability and resilient defensive engineering[span_43](start_span)[span_43](end_span)[span_44](start_span)[span_44](end_span).</p>
+
+      <h2>4. Core Technical Pillars</h2>
+      <p>Sagar’s operational engineering discipline is guided by three principles: <strong>"Design → Deploy → Defend"</strong>[span_45](start_span)[span_45](end_span):</p>
+      <ul>
+        <li><strong>Design:</strong> Architecting clean, intuitive, and responsive UI layouts built for optimal user experiences[span_46](start_span)[span_46](end_span).</li>
+        <li><strong>Deploy:</strong> Bringing ideas into functional production environments through reliable code practices[span_47](start_span)[span_47](end_span).</li>
+        <li><strong>Defend:</strong> Fortifying systems against threats, identifying security vulnerabilities, and ensuring cyber resilience[span_48](start_span)[span_48](end_span)[span_49](start_span)[span_49](end_span).</li>
+      </ul>
+
+      <h2>5. Visual Media & Creative Direction</h2>
+      <p>Beyond code and analytical systems, Sagar actively engages in visual composition and storytelling[span_50](start_span)[span_50](end_span)[span_51](start_span)[span_51](end_span). He applies an engineer's attention to detail to light balance, frame perspectives, and photographic aesthetic[span_52](start_span)[span_52](end_span)[span_53](start_span)[span_53](end_span).</p>
+
+      <h2>6. Travel & Motorcycling Exploration</h2>
+      <p>As a counterweight to screen time, Sagar is an avid motorcycle enthusiast and highway traveler[span_54](start_span)[span_54](end_span)[span_55](start_span)[span_55](end_span). He frequently takes to the open roads of Chhattisgarh and neighboring regions, capturing authentic moments from behind the handlebars[span_56](start_span)[span_56](end_span)[span_57](start_span)[span_57](end_span).</p>
+
+      <h2>7. Core Ethos & Philosophy</h2>
+      <p>His day-to-day focus is guided by three words: <strong>"Build. Secure. Explore."</strong>[span_58](start_span)[span_58](end_span)</p>
+      <ul>
+        <li><strong>Build:</strong> Creating purposeful, elegant digital systems[span_59](start_span)[span_59](end_span)[span_60](start_span)[span_60](end_span).</li>
+        <li><strong>Secure:</strong> Upholding integrity, security, and strong digital ethics[span_61](start_span)[span_61](end_span)[span_62](start_span)[span_62](end_span).</li>
+        <li><strong>Explore:</strong> Pushing boundaries both on the tarmac and in emerging technologies[span_63](start_span)[span_63](end_span)[span_64](start_span)[span_64](end_span).</li>
+      </ul>
+
+      <h2>8. Digital Identity & Presence</h2>
+      <div class="identity-box">
+        <ul>
+          <li><strong>Full Name:</strong> Sagar Mishra[span_65](start_span)[span_65](end_span)[span_66](start_span)[span_66](end_span)</li>
+          <li><strong>Regional Moniker:</strong> Maharaj / Maharaj Ji (Pandit)</li>
+          <li><strong>Designations:</strong> Cyber Engineer | Web Designer | Visual Storyteller | Explorer[span_67](start_span)[span_67](end_span)[span_68](start_span)[span_68](end_span)</li>
+          <li><strong>Base Location:</strong> Raipur, Chhattisgarh, India 🇮🇳[span_69](start_span)[span_69](end_span)</li>
+          <li><strong>Universal Handle:</strong> @xsagarmishra (Official handle across all platforms)[span_70](start_span)[span_70](end_span)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HINDI CONTENT -->
+    <div id="lang-hindi" class="lang-block">
+      <h2>1. परिचय (About Sagar)</h2>
+      <p>सागर मिश्रा रायपुर, छत्तीसगढ़ के एक साइबर इंजीनियर, वेब डिज़ाइनर और विजुअल स्टोरीटेलर हैं[span_71](start_span)[span_71](end_span)[span_72](start_span)[span_72](end_span)। वे डिजिटल आर्किटेक्चर और रचनात्मक मीडिया के संगम पर कार्य करते हैं[span_73](start_span)[span_73](end_span)[span_74](start_span)[span_74](end_span)। आधुनिक कंप्यूटर प्रणालियों को डिज़ाइन करना और उन्हें साइबर खतरों से सुरक्षित रखना उनका मुख्य उद्देश्य है[span_75](start_span)[span_75](end_span)[span_76](start_span)[span_76](end_span) |</p>
+
+      <h2>2. सांस्कृतिक जड़ें एवं संस्कार</h2>
+      <p>एक पंडित परिवार की परंपरा और संस्कारों से जुड़े होने के कारण, उनके क्षेत्र और सामाजिक दायरे में लोग उन्हें आदरपूर्वक <strong>'महाराज'</strong> या <strong>'महाराज जी'</strong> कहकर संबोधित करते हैं। अपने संस्कारों से प्राप्त अनुशासन, सत्यनिष्ठा और ज्ञान की खोज को वे आधुनिक डिजिटल तकनीक के साथ जोड़कर आगे बढ़ते हैं।</p>
+
+      <h2>3. सफर की शुरुआत</h2>
+      <p>छत्तीसगढ़ से शुरू हुए इस सफर में सागर की रुचि आरंभ से ही कंप्यूटर संरचना, लॉजिक और कोडिंग में रही[span_77](start_span)[span_77](end_span)[span_78](start_span)[span_78](end_span)। उन्होंने समझा कि इंटरनेट पर सशक्त उपस्थिति के लिए आकर्षक वेब डिज़ाइन और सुदृढ़ साइबर सुरक्षा दोनों का संतुलन अत्यंत आवश्यक है[span_79](start_span)[span_79](end_span)[span_80](start_span)[span_80](end_span) |</p>
+
+      <h2>4. मुख्य तकनीकी सिद्धांत</h2>
+      <p>सागर का तकनीकी कार्यप्रवाह उनके तीन प्रमुख सिद्धांतों पर आधारित है: <strong>"Design → Deploy → Defend"</strong>[span_81](start_span)[span_81](end_span):</p>
+      <ul>
+        <li><strong>Design:</strong> तेज़, सहज और आधुनिक वेब इंटरफेस तैयार करना जो दिखने और चलने में प्रभावी हों[span_82](start_span)[span_82](end_span)।</li>
+        <li><strong>Deploy:</strong> विचारों और कोड को सुचारू रूप से लाइव प्लेटफॉर्म पर स्थापित करना[span_83](start_span)[span_83](end_span)।</li>
+        <li><strong>Defend:</strong> साइबर खतरों से सुरक्षा, सुरक्षा कमियों की पहचान और डिजिटल सिस्टम को सुरक्षित रखना[span_84](start_span)[span_84](end_span)[span_85](start_span)[span_85](end_span)।</li>
+      </ul>
+
+      <h2>5. विजुअल मीडिया और रचनात्मक प्रस्तुति</h2>
+      <p>कंप्यूटर स्क्रीन से परे, सागर फोटोग्राफी और विजुअल स्टोरीटेलिंग में सक्रिय रहते हैं[span_86](start_span)[span_86](end_span)[span_87](start_span)[span_87](end_span)। वे फ्रेम कंपोजिशन, रोशनी और रंगों के संतुलन को एक इंजीनियर की बारीकी के साथ प्रस्तुत करते हैं[span_88](start_span)[span_88](end_span)[span_89](start_span)[span_89](end_span)।</p>
+
+      <h2>6. यात्रा एवं मोटरबाइक का सफर</h2>
+      <p>तकनीकी कार्य के साथ संतुलन बनाए रखने के लिए सागर राजमार्गों और बाइक यात्राओं पर निकलते हैं[span_90](start_span)[span_90](end_span)[span_91](start_span)[span_91](end_span)। छत्तीसगढ़ के सुंदर प्राकृतिक मार्गों और नए स्थानों को बाइक पर खोजना और उन्हें संजोना उनकी जीवनशैली का हिस्सा है[span_92](start_span)[span_92](end_span)[span_93](start_span)[span_93](end_span) |</p>
+
+      <h2>7. जीवन दर्शन</h2>
+      <p>सागर का कार्य और दृष्टिकोण तीन शब्दों पर केंद्रित है: <strong>"Build. Secure. Explore."</strong>[span_94](start_span)[span_94](end_span)</p>
+      <ul>
+        <li><strong>Build:</strong> उपयोगी डिजिटल टूल्स और प्लेटफॉर्म का निर्माण करना[span_95](start_span)[span_95](end_span)[span_96](start_span)[span_96](end_span)।</li>
+        <li><strong>Secure:</strong> प्रणालियों और डेटा की सुरक्षा को सर्वोच्च प्राथमिकता देना[span_97](start_span)[span_97](end_span)[span_98](start_span)[span_98](end_span)।</li>
+        <li><strong>Explore:</strong> नई तकनीकों और जीवन के नए अनुभवों का अन्वेषण करना[span_99](start_span)[span_99](end_span)[span_100](start_span)[span_100](end_span)।</li>
+      </ul>
+
+      <h2>8. डिजिटल पहचान एवं सोशल उपस्थिति</h2>
+      <div class="identity-box">
+        <ul>
+          <li><strong>पूरा नाम:</strong> सागर मिश्रा[span_101](start_span)[span_101](end_span)[span_102](start_span)[span_102](end_span)</li>
+          <li><strong>स्थानीय संबोधन:</strong> महाराज / महाराज जी (पंडित)</li>
+          <li><strong>पदनाम:</strong> Cyber Engineer | Web Designer | Visual Storyteller | Explorer[span_103](start_span)[span_103](end_span)[span_104](start_span)[span_104](end_span)</li>
+          <li><strong>स्थान:</strong> रायपुर, छत्तीसगढ़, भारत 🇮🇳[span_105](start_span)[span_105](end_span)</li>
+          <li><strong>यूनिवर्सल हैंडल:</strong> @xsagarmishra (सभी सोशल मीडिया प्लेटफॉर्म्स पर)[span_106](start_span)[span_106](end_span)</li>
+        </ul>
+      </div>
     </div>
 
     <footer>
@@ -214,15 +328,26 @@
     </footer>
   </div>
 
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,hi,bn,te,mr,ta,gu,kn,ml,pa',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
+  <script>
+    function setLanguage(lang, btnElement) {
+      var blocks = document.querySelectorAll('.lang-block');
+      for (var i = 0; i < blocks.length; i++) {
+        blocks[i].classList.remove('active');
+      }
+
+      var buttons = document.querySelectorAll('.lang-btn');
+      for (var j = 0; j < buttons.length; j++) {
+        buttons[j].classList.remove('active');
+      }
+
+      var selected = document.getElementById('lang-' + lang);
+      if (selected) {
+        selected.classList.add('active');
+      }
+      if (btnElement) {
+        btnElement.classList.add('active');
+      }
     }
   </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
