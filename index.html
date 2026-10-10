@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sagar Mishra | Official Portfolio & Biography</title>
-  <meta name="description" content="Official Portfolio & Biography of Sagar Mishra | Cyber Engineer, Web Designer & Visual Storyteller.">
+  <title>Sagar Mishra | AI Engineer • Cyber Engineer • Visual Architect • Relentless Explorer</title>
+  <meta name="description" content="Official Portfolio & Biography of Sagar Mishra | AI Engineer, Cyber Engineer, Visual Architect & Relentless Explorer.">
   <style>
     :root {
       --bg: #090d16;
@@ -14,6 +14,7 @@
       --muted: #8b949e;
       --heading: #f0f6fc;
       --accent: #58a6ff;
+      --accent-glow: rgba(88, 166, 255, 0.15);
     }
     * {
       box-sizing: border-box;
@@ -27,13 +28,13 @@
       line-height: 1.7;
     }
     .container {
-      max-width: 780px;
+      max-width: 820px;
       margin: 0 auto;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 32px 24px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      padding: 36px 28px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
     }
     .top-bar {
       display: flex;
@@ -41,19 +42,25 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     .header-badge {
       display: inline-block;
-      background: rgba(88, 166, 255, 0.12);
+      background: var(--accent-glow);
       color: var(--accent);
-      border: 1px solid rgba(88, 166, 255, 0.3);
-      padding: 4px 12px;
+      border: 1px solid rgba(88, 166, 255, 0.35);
+      padding: 5px 14px;
       border-radius: 999px;
       font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 0.5px;
       text-transform: uppercase;
+    }
+    .lang-controls {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
     }
     .lang-switcher {
       display: inline-flex;
@@ -67,7 +74,7 @@
       background: transparent;
       border: none;
       color: var(--muted);
-      padding: 6px 12px;
+      padding: 5px 12px;
       border-radius: 6px;
       cursor: pointer;
       font-size: 0.82rem;
@@ -81,15 +88,26 @@
       background: var(--accent);
       color: #090d16;
     }
+    #google_translate_element select {
+      background: #161b22;
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      outline: none;
+      cursor: pointer;
+    }
     h1 {
       color: var(--heading);
-      margin: 0 0 8px 0;
-      font-size: 2.2rem;
+      margin: 0 0 6px 0;
+      font-size: 2.3rem;
       font-weight: 700;
     }
     .tagline {
-      font-size: 1rem;
-      color: var(--muted);
+      font-size: 1.05rem;
+      color: var(--accent);
+      font-weight: 500;
       margin: 0 0 16px 0;
     }
     .meta-bar {
@@ -102,24 +120,31 @@
       border-bottom: 1px solid var(--border);
       font-size: 0.92rem;
       color: var(--text);
-    }
-    .meta-bar a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
+      margin-bottom: 20px;
     }
     .social-tag {
-      background: rgba(88, 166, 255, 0.1);
-      border: 1px solid rgba(88, 166, 255, 0.25);
+      background: var(--accent-glow);
+      border: 1px solid rgba(88, 166, 255, 0.3);
       padding: 2px 8px;
       border-radius: 6px;
       color: var(--accent);
+    }
+    .quote-box {
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 3px solid var(--accent);
+      padding: 14px 18px;
+      margin: 16px 0 24px 0;
+      font-style: italic;
+      color: #e6edf3;
+      border-radius: 0 8px 8px 0;
     }
     h2 {
       color: var(--accent);
       margin-top: 32px;
       margin-bottom: 12px;
       font-size: 1.25rem;
+      border-bottom: 1px solid rgba(35, 47, 72, 0.6);
+      padding-bottom: 6px;
     }
     p {
       margin: 0 0 14px 0;
@@ -136,19 +161,53 @@
     strong {
       color: var(--heading);
     }
-    .identity-box {
+    .info-card {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 16px;
-      margin-top: 12px;
+      padding: 18px;
+      margin: 16px 0;
     }
-    .identity-box ul {
-      margin-bottom: 0;
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .social-card {
+      background: #161b22;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s ease;
+    }
+    .social-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .social-card strong {
+      color: var(--accent);
+      font-size: 0.92rem;
+    }
+    .social-card span {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .cta-box {
+      margin-top: 32px;
+      padding: 20px;
+      border: 1px dashed var(--accent);
+      border-radius: 10px;
+      background: var(--accent-glow);
+      text-align: center;
     }
     footer {
       text-align: center;
-      margin-top: 36px;
+      margin-top: 40px;
       padding-top: 20px;
       border-top: 1px solid var(--border);
       font-size: 0.85rem;
@@ -157,8 +216,11 @@
     .lang-block {
       display: none;
     }
-    .lang-block.active {
-      display: block;
+    .goog-te-banner-frame.skiptranslate {
+      display: none !important;
+    }
+    body {
+      top: 0px !important;
     }
   </style>
 </head>
@@ -166,160 +228,331 @@
   <div class="container">
     <div class="top-bar">
       <span class="header-badge">Official Biography</span>
-      <div class="lang-switcher">
-        <button type="button" class="lang-btn active" onclick="setLanguage('hinglish', this)">Hinglish</button>
-        <button type="button" class="lang-btn" onclick="setLanguage('english', this)">English</button>
-        <button type="button" class="lang-btn" onclick="setLanguage('hindi', this)">हिन्दी</button>
+      <div class="lang-controls">
+        <div class="lang-switcher">
+          <button type="button" id="btn-hinglish" class="lang-btn active" onclick="setLang('hinglish')">Hinglish</button>
+          <button type="button" id="btn-english" class="lang-btn" onclick="setLang('english')">English</button>
+          <button type="button" id="btn-hindi" class="lang-btn" onclick="setLang('hindi')">हिन्दी</button>
+        </div>
+        <div id="google_translate_element"></div>
       </div>
     </div>
 
     <h1>Sagar Mishra</h1>
-    <div class="tagline">Cyber Engineer • Web Designer • Visual Storyteller • Explorer</div>
+    <div class="tagline">AI Engineer • Cyber Engineer • Visual Architect • Relentless Explorer</div>
 
     <div class="meta-bar">
       <span>📍 Base: Raipur, Chhattisgarh, India 🇮🇳</span>
       <span>•</span>
-      <span>🌐 All Social Handles: <strong class="social-tag">@xsagarmishra</strong></span>
-      <span>•</span>
-      <span>
-        <a href="https://instagram.com/xsagarmishra" target="_blank">Instagram</a> | 
-        <a href="https://github.com/xsagarmishra" target="_blank">GitHub</a> | 
-        <a href="https://x.com/xsagarmishra" target="_blank">X (Twitter)</a>
-      </span>
+      <span>🌐 Universal Identity: <strong class="social-tag">@xsagarmishra</strong></span>
     </div>
 
-    <!-- HINGLISH CONTENT -->
-    <div id="lang-hinglish" class="lang-block active">
-      <h2>1. About Sagar</h2>
-      <p>Sagar Mishra Raipur, Chhattisgarh ke ek Cyber Engineer, Web Designer aur visual storyteller hain[span_1](start_span)[span_1](end_span)[span_2](start_span)[span_2](end_span). Yeh digital architecture aur creative media ke jod par kaam karte hain[span_3](start_span)[span_3](end_span)[span_4](start_span)[span_4](end_span). Modern computing systems ko design karna aur unhe cyber attacks se surakshit rakhna inka main passion hai[span_5](start_span)[span_5](end_span)[span_6](start_span)[span_6](end_span).</p>
+    <!-- HINGLISH VERSION (DEFAULT) -->
+    <div id="lang-hinglish" class="lang-block" style="display: block;">
+      <div class="quote-box">
+        "Vaidik shuddhata se mila anushasan, kathin sangharsh se bani taakat, aur modern technology ka abhedya suraksha chakra — Build. Secure. Explore."
+      </div>
 
-      <h2>2. Cultural Roots & Sanskaar</h2>
-      <p>Ek Pandit parivaar ki parampara aur sanskaaron se jude hone ki wajah se, inke local circle aur ilaqe mein log inhein samman se <strong>'Maharaj'</strong> ya <strong>'Maharaj Ji'</strong> keh kar bulate hain. Apne sanskaaron se seekha anushasan, satyata aur gyaan ki khoj ko yeh modern digital technology ke saath jod kar chalte hain.</p>
+      <h2>1. Parichay & Core Vision (About Sagar)</h2>
+      <p>Sagar Mishra Raipur, Chhattisgarh ke ek innovative tech professional aur digital creator hain, jo <strong>Artificial Intelligence</strong>, <strong>Cyber Engineering</strong>, aur high-impact visual design ke sangam par kaam karte hain. Inka primary mission intelligent computing models architect karna, resilient web platforms taiyaar karna aur sensitive data infrastructures ko har prakaar ke advanced cyber threats se abhedya (unbreakable) suraksha pradaan karna hai. Complex coding screens se aage nikal kar, zameen par Sagar ek grounded, fearless aur naye vicharon ke prati hamesha receptive vyakti hain.</p>
 
-      <h2>3. Safar Ki Shuruaat</h2>
-      <p>Chhattisgarh se shuru hue is safar mein, shuru se hi Sagar ka focus internet structure, logic aur coding par raha[span_7](start_span)[span_7](end_span)[span_8](start_span)[span_8](end_span). Inhone pehle hi samajh liya tha ki internet par impactful banne ke liye attractive visual design aur mazboot cyber security dono ka santulan hona zaroori hai[span_9](start_span)[span_9](end_span)[span_10](start_span)[span_10](end_span).</p>
-
-      <h2>4. Core Technical Pillars</h2>
-      <p>Sagar ka poora technical workflow inke teen usoolon par tika hai: <strong>"Design → Deploy → Defend"</strong>[span_11](start_span)[span_11](end_span):</p>
+      <h2>2. Vaidik Virasat, Sanskaar & Parampara (Cultural Identity)</h2>
+      <p>Sagar ko samaj, ilaqe aur doston ke beech log dil se aur poore aadar ke sath <strong>'Maharaj'</strong> ya <strong>'Maharaj Ji'</strong> keh kar bulate hain. Yeh pehchaan unke rakt aur aacharan mein basi peedhiyon purani pavitra virasat ka prateek hai:</p>
       <ul>
-        <li><strong>Design:</strong> Tez, responsive aur clean web interfaces banana jo chalne mein light aur sundar hon[span_12](start_span)[span_12](end_span).</li>
-        <li><strong>Deploy:</strong> Ideas ko efficiently live servers aur websites par setup karna[span_13](start_span)[span_13](end_span).</li>
-        <li><strong>Defend:</strong> Cyber threats se protection, security flaws pakadna aur digital systems ko safe rakhna[span_14](start_span)[span_14](end_span)[span_15](start_span)[span_15](end_span).</li>
+        <li><strong>Vaidik Pandit Parampara:</strong> Inke poorvaj aur puraani peedhiyaan pratishthit Vaidik Pandit rahi hain. Sanatan Dharm, ved-shastra aur anushthanik maryadaon ke prati nishtha inke kul ke itihaas mein yugon se chali aa rahi hai.</li>
+        <li><strong>Nana ji aur Mama ji se Praapt Gyaan:</strong> Sagar ne panditai, vedic puja-vidhan, shuddh mantrochhar aur niyam-dharm seedhe apne <strong>Nana ji</strong> aur <strong>Mama ji</strong> ke paavan maargdarshan aur aashirwaad se seekh kar aatmsaat kiye hain.</li>
+        <li><strong>The Dual Rigor:</strong> <em>"Vaidik mantron aur anushthan mein shuddhata aur niyam chahiye hote hain — theek wahi precision aur zero-tolerance for error humein AI models aur cyber defense architecture mein chahiye hota hai."</em> Yahi pavitra sanskaar inke engineering mindset ko mazboot ethical grounding dete hain.</li>
       </ul>
 
-      <h2>5. Visual Media & Creative Storytelling</h2>
-      <p>Code aur computer screen se aage, Sagar photography aur visual storytelling mein actively focus karte hain[span_16](start_span)[span_16](end_span)[span_17](start_span)[span_17](end_span). Frame composition, natural light aur colors ke balance ko yeh ek engineer ki baareeki ke saath capture karte hain[span_18](start_span)[span_18](end_span)[span_19](start_span)[span_19](end_span).</p>
-
-      <h2>6. Travel & Motorcycling Safar</h2>
-      <p>Screen-time ke stress ko balance karne ke liye Sagar highway journeys aur bike trips par nikalte hain[span_20](start_span)[span_20](end_span)[span_21](start_span)[span_21](end_span). Chhattisgarh ke sundar raaston, ghatiyon aur naye thikaanon ko bike par explore karna aur unhein record karna inka lifestyle hai[span_22](start_span)[span_22](end_span)[span_23](start_span)[span_23](end_span).</p>
-
-      <h2>7. Jeevan Darshan</h2>
-      <p>Sagar ka kaam aur mindset teen niyam par chalta hai: <strong>"Build. Secure. Explore."</strong>[span_24](start_span)[span_24](end_span)</p>
+      <h2>3. Sangharsh, Kathin Daur aur Fighter Spirit (Resilience)</h2>
+      <p>Zindagi ne Sagar ko har mod par test kiya hai, aur inka astitva aasan raste par chal kar nahi, balki toofanon se ladkar bana hai:</p>
       <ul>
-        <li><strong>Build:</strong> Kaam aane wale tools aur platforms construct karna[span_25](start_span)[span_25](end_span)[span_26](start_span)[span_26](end_span).</li>
-        <li><strong>Secure:</strong> Systems aur data ki suraksha ko hamesha pehle rakhna[span_27](start_span)[span_27](end_span)[span_28](start_span)[span_28](end_span).</li>
-        <li><strong>Explore:</strong> Har roz naye raaste, nayi technology aur apni abilities ko test karna[span_29](start_span)[span_29](end_span)[span_30](start_span)[span_30](end_span).</li>
+        <li><strong>Bure Daur aur Chunautiyan:</strong> Inhone life mein bohot gehra struggle dekha hai, adverse situations jheli hain aur aneko kathin phases ko akele face kiya hai. Har setback ne unhe toodne ke bajaye pathar ki tarah aur zyada focused aur mazboot banaya hai.</li>
+        <li><strong>Unstoppable Attitude:</strong> Inka ek atal niyam hai — <em>"Jab tak mera Lakshya poora nahi ho jata, tab tak main har musibat se aage badhkar ladunga aur continuous fight karta rahunga."</em></li>
       </ul>
 
-      <h2>8. Digital Identity & Social Presence</h2>
-      <div class="identity-box">
+      <h2>4. Technical Foundations & Core Pillars</h2>
+      <p>Sagar ka technical operational framework teen nishchit usoolon par chalta hai: <strong>"Innovate → Build → Defend"</strong>:</p>
+      <ul>
+        <li><strong>Artificial Intelligence (AI):</strong> Machine learning models par kaam karna, intelligent automation build karna aur algorithms ko real-world samasyaon ke nidaan ke liye deploy karna.</li>
+        <li><strong>Cyber Engineering & Defense:</strong> Networks aur systems ki absolute security ensure karna, deep vulnerability assessment, aur critical data ko cyber attacks se mazbooti se guard karna.</li>
+        <li><strong>Web Architecture & UI:</strong> Fast, ultra-lightweight aur modern web interfaces craft karna jo performance mein responsive aur aesthetic balance mein clean hon.</li>
+      </ul>
+
+      <h2>5. Passions, Creative World & Lifestyle</h2>
+      <ul>
+        <li><strong>Visual Architect (Videography & Cinematic Framing):</strong> Visual storytelling inka shauk hai. Real-life moments, camera angles, perspective transitions, lights aur shadows ke balance ko capture karke har frame ko kahani banana inki kala hai.</li>
+        <li><strong>Relentless Explorer (Travel & Motorcycling):</strong> Do-pahiye par sawar hokar lambe highways aur ghaatiyon par nikalna inke liye mental meditation hai. Safar ki hawa inke dimaag ko fresh focus aur nayi disha deti hai.</li>
+        <li><strong>Music:</strong> Sangeet inki dincharya ka anivarya hissa hai. Complex engineering research ke dauran deep focus banana ho ya highway rides par energy maintain karni ho — music inki creative rhythm hai.</li>
+        <li><strong>Networking & People:</strong> Nayi jagahon par naye logon se milna, alag vicharon ko samajhna aur genuine connections build karna inka sahaj svabhav hai.</li>
+      </ul>
+
+      <h2>6. Live Status & Current Focus</h2>
+      <div class="info-card">
         <ul>
-          <li><strong>Poora Naam:</strong> Sagar Mishra[span_31](start_span)[span_31](end_span)[span_32](start_span)[span_32](end_span)</li>
-          <li><strong>Local Sambodhan:</strong> Maharaj / Maharaj Ji (Pandit)</li>
-          <li><strong>Designation:</strong> Cyber Engineer | Web Designer | Visual Storyteller | Explorer[span_33](start_span)[span_33](end_span)[span_34](start_span)[span_34](end_span)</li>
-          <li><strong>Base Location:</strong> Raipur, Chhattisgarh, India 🇮🇳[span_35](start_span)[span_35](end_span)</li>
-          <li><strong>Universal Handle:</strong> @xsagarmishra (Sabhi social media platforms par)[span_36](start_span)[span_36](end_span)</li>
+          <li><strong>Engineering:</strong> Deep diving into secure AI systems, autonomous agents, and threat-hunting mechanisms.</li>
+          <li><strong>Exploration:</strong> Central India aur neighboring states ke anmapped highway corridors ko motorcycle par record karna.</li>
+          <li><strong>Mindset:</strong> Shastron ki maryada aur high-velocity computing dono mein naye aayam dhoondhna.</li>
         </ul>
+      </div>
+
+      <h2>7. Jeevan Darshan (Personal Ethos)</h2>
+      <p>Sagar ka jeevan teen shabdon par tika hai: <strong>"Build. Secure. Explore."</strong></p>
+      <ul>
+        <li><strong>Build:</strong> Aise tools aur intelligent platforms construct karna jo durable hon aur lasting impact chhoden.</li>
+        <li><strong>Secure:</strong> Apne data, ethics, sanskaar aur aatmasamman ki har sthiti mein hifazat karna.</li>
+        <li><strong>Explore:</strong> Chahe nayi technology ho, naye raste hon ya naye dost — kabhi na rukna aur satat aage badhte rehna.</li>
+      </ul>
+
+      <h2>8. Official Digital Directory & Social Connect</h2>
+      <div class="social-grid">
+        <a href="https://youtube.com/@xsagarmishra" target="_blank" class="social-card">
+          <strong>YouTube</strong>
+          <span>@xsagarmishra • Videos & Tech</span>
+        </a>
+        <a href="https://instagram.com/xsagarmishra" target="_blank" class="social-card">
+          <strong>Instagram</strong>
+          <span>@xsagarmishra • Visuals & Rides</span>
+        </a>
+        <a href="https://facebook.com/xsagarmishra" target="_blank" class="social-card">
+          <strong>Facebook</strong>
+          <span>@xsagarmishra • Community</span>
+        </a>
+        <a href="https://snapchat.com/add/xsagarmishra" target="_blank" class="social-card">
+          <strong>Snapchat</strong>
+          <span>@xsagarmishra • Daily Snaps</span>
+        </a>
+        <a href="https://x.com/xsagarmishra" target="_blank" class="social-card">
+          <strong>X (Twitter)</strong>
+          <span>@xsagarmishra • Tech & Cyber</span>
+        </a>
+        <a href="https://threads.net/@xsagarmishra" target="_blank" class="social-card">
+          <strong>Threads</strong>
+          <span>@xsagarmishra • Conversations</span>
+        </a>
+        <a href="https://github.com/xsagarmishra" target="_blank" class="social-card">
+          <strong>GitHub</strong>
+          <span>@xsagarmishra • Code & Repos</span>
+        </a>
+        <a href="https://google.com/search?q=xsagarmishra" target="_blank" class="social-card">
+          <strong>Google</strong>
+          <span>xsagarmishra • Verified Search</span>
+        </a>
+        <div class="social-card">
+          <strong>Other Platforms</strong>
+          <span>@xsagarmishra • Universal Presence</span>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <strong>🤝 Collaborate & Reach Out</strong>
+        <p style="margin: 8px 0 0 0; font-size: 0.95rem;">"Chahe secure platforms aur AI architectures par brainstorm karna ho, highway rides aur visual cinematography par baat karni ho, ya dosti aur networking badhaani ho — my doors are always open at @xsagarmishra."</p>
       </div>
     </div>
 
-    <!-- ENGLISH CONTENT -->
+    <!-- ENGLISH VERSION -->
     <div id="lang-english" class="lang-block">
-      <h2>1. About Sagar</h2>
-      <p>Sagar Mishra is an Indian technologist, Cyber Engineer, Web Designer, and visual storyteller based in Raipur, Chhattisgarh[span_37](start_span)[span_37](end_span)[span_38](start_span)[span_38](end_span). Operating at the crossroads of system architecture and creative media, he focuses on designing purposeful interfaces and defending digital systems against cyber vulnerabilities[span_39](start_span)[span_39](end_span)[span_40](start_span)[span_40](end_span).</p>
+      <div class="quote-box">
+        "Disciplined by timeless Vedic rigor, forged through relentless adversity, and architecting unbreakable systems for the digital frontier — Build. Secure. Explore."
+      </div>
 
-      <h2>2. Cultural Roots & Heritage</h2>
-      <p>Hailing from a Pandit family heritage, Sagar is respectfully addressed in his local region and community as <strong>'Maharaj'</strong> or <strong>'Maharaj Ji'</strong>. Rooted in values of discipline, truthfulness, and continuous learning, he harmoniously blends timeless traditions with high-velocity computing technology.</p>
+      <h2>1. About Sagar (Core Vision)</h2>
+      <p>Sagar Mishra is an Indian technologist and creator based in Raipur, Chhattisgarh, operating at the crossroads of <strong>Artificial Intelligence</strong>, <strong>Cyber Engineering</strong>, and high-impact visual architecture. His primary mission is to architect intelligent computing models, engineer resilient web platforms, and fortify sensitive data infrastructure against advanced cyber threats. Beyond analytical screens, Sagar is deeply grounded, fearless, and receptive to lifelong learning.</p>
 
-      <h2>3. Early Vision & Foundations</h2>
-      <p>Originating from Chhattisgarh, Sagar developed an early curiosity for digital infrastructure, logical problem solving, and network architecture[span_41](start_span)[span_41](end_span)[span_42](start_span)[span_42](end_span). He recognized that meaningful digital products require a balance between visual usability and resilient defensive engineering[span_43](start_span)[span_43](end_span)[span_44](start_span)[span_44](end_span).</p>
-
-      <h2>4. Core Technical Pillars</h2>
-      <p>Sagar’s operational engineering discipline is guided by three principles: <strong>"Design → Deploy → Defend"</strong>[span_45](start_span)[span_45](end_span):</p>
+      <h2>2. Vedic Heritage, Values & Lineage (Cultural Identity)</h2>
+      <p>Respectfully addressed across his community as <strong>'Maharaj'</strong> or <strong>'Maharaj Ji'</strong>, this identity represents generations of sacred spiritual lineage:</p>
       <ul>
-        <li><strong>Design:</strong> Architecting clean, intuitive, and responsive UI layouts built for optimal user experiences[span_46](start_span)[span_46](end_span).</li>
-        <li><strong>Deploy:</strong> Bringing ideas into functional production environments through reliable code practices[span_47](start_span)[span_47](end_span).</li>
-        <li><strong>Defend:</strong> Fortifying systems against threats, identifying security vulnerabilities, and ensuring cyber resilience[span_48](start_span)[span_48](end_span)[span_49](start_span)[span_49](end_span).</li>
+        <li><strong>Vedic Pandit Lineage:</strong> His ancestors across generations have been venerable Vedic Pandits, maintaining an unbroken dedication to Sanatan Dharma and Vedic shastras.</li>
+        <li><strong>Guidance of Nana ji & Mama ji:</strong> Sagar inherited and absorbed ritual priesthood, Vedic recitations, and ethical living directly under the divine guidance and blessings of his <strong>Maternal Grandfather (Nana ji)</strong> and <strong>Maternal Uncle (Mama ji)</strong>.</li>
+        <li><strong>The Dual Rigor:</strong> <em>"Vedic rituals demand absolute purity and uncompromising precision — exactly the same zero-tolerance discipline required when architecting AI models and cyber defense infrastructure."</em></li>
       </ul>
 
-      <h2>5. Visual Media & Creative Direction</h2>
-      <p>Beyond code and analytical systems, Sagar actively engages in visual composition and storytelling[span_50](start_span)[span_50](end_span)[span_51](start_span)[span_51](end_span). He applies an engineer's attention to detail to light balance, frame perspectives, and photographic aesthetic[span_52](start_span)[span_52](end_span)[span_53](start_span)[span_53](end_span).</p>
+      <h2>3. Adversity, Struggle & Resilience</h2>
+      <p>Sagar's path was shaped not through easy avenues, but through enduring trials:</p>
+      <ul>
+        <li><strong>Facing Adversity:</strong> Having weathered deep personal struggles, severe setbacks, and dark chapters alone, every challenge refined him into an unshakeable, focused individual.</li>
+        <li><strong>The Unstoppable Creed:</strong> <em>"Until my ultimate goal is accomplished, I will advance through every obstacle and continue the fight relentlessly."</em></li>
+      </ul>
 
-      <h2>6. Travel & Motorcycling Exploration</h2>
-      <p>As a counterweight to screen time, Sagar is an avid motorcycle enthusiast and highway traveler[span_54](start_span)[span_54](end_span)[span_55](start_span)[span_55](end_span). He frequently takes to the open roads of Chhattisgarh and neighboring regions, capturing authentic moments from behind the handlebars[span_56](start_span)[span_56](end_span)[span_57](start_span)[span_57](end_span).</p>
+      <h2>4. Technical Foundations & Core Pillars</h2>
+      <p>His engineering workflow follows three operational principles: <strong>"Innovate → Build → Defend"</strong>:</p>
+      <ul>
+        <li><strong>Artificial Intelligence (AI):</strong> Developing machine learning models, autonomous workflows, and deploying algorithms to solve complex real-world challenges.</li>
+        <li><strong>Cyber Engineering & Defense:</strong> Ensuring holistic network security, conducting deep vulnerability research, and fortifying data against threat vectors.</li>
+        <li><strong>Web Architecture & UI:</strong> Crafting ultra-fast, modern, lightweight web platforms optimized for peak performance and aesthetic clarity.</li>
+      </ul>
+
+      <h2>5. Passions, Lifestyle & Creative Direction</h2>
+      <ul>
+        <li><strong>Visual Architect (Videography & Framing):</strong> Visual storytelling is his creative cornerstone. Capturing authentic human moments, perspective transitions, light, and shadow with an engineer's precision.</li>
+        <li><strong>Relentless Explorer (Travel & Motorcycling):</strong> Taking to the highways and winding passes on two wheels acts as active meditation, clearing the mind and renewing focus.</li>
+        <li><strong>Music:</strong> An integral daily companion providing rhythmic focus during complex coding marathons and long road journeys.</li>
+        <li><strong>Networking & Connection:</strong> Meeting individuals from diverse perspectives, exchanging insights, and building authentic human bonds.</li>
+      </ul>
+
+      <h2>6. Live Horizon & Current Focus</h2>
+      <div class="info-card">
+        <ul>
+          <li><strong>Engineering:</strong> Deep-diving into secure autonomous AI agents and automated threat intelligence.</li>
+          <li><strong>Exploration:</strong> Documenting uncharted highway routes across Central India on two wheels.</li>
+          <li><strong>Mindset:</strong> Harmonizing ancient scriptural discipline with high-velocity computing.</li>
+        </ul>
+      </div>
 
       <h2>7. Core Ethos & Philosophy</h2>
-      <p>His day-to-day focus is guided by three words: <strong>"Build. Secure. Explore."</strong>[span_58](start_span)[span_58](end_span)</p>
+      <p>Guided by three foundational imperatives: <strong>"Build. Secure. Explore."</strong></p>
       <ul>
-        <li><strong>Build:</strong> Creating purposeful, elegant digital systems[span_59](start_span)[span_59](end_span)[span_60](start_span)[span_60](end_span).</li>
-        <li><strong>Secure:</strong> Upholding integrity, security, and strong digital ethics[span_61](start_span)[span_61](end_span)[span_62](start_span)[span_62](end_span).</li>
-        <li><strong>Explore:</strong> Pushing boundaries both on the tarmac and in emerging technologies[span_63](start_span)[span_63](end_span)[span_64](start_span)[span_64](end_span).</li>
+        <li><strong>Build:</strong> Creating purposeful, lasting platforms and connections.</li>
+        <li><strong>Secure:</strong> Protecting data, personal integrity, cultural roots, and ethics under all conditions.</li>
+        <li><strong>Explore:</strong> Continually expanding horizons across technology, roads, and human interactions.</li>
       </ul>
 
-      <h2>8. Digital Identity & Presence</h2>
-      <div class="identity-box">
-        <ul>
-          <li><strong>Full Name:</strong> Sagar Mishra[span_65](start_span)[span_65](end_span)[span_66](start_span)[span_66](end_span)</li>
-          <li><strong>Regional Moniker:</strong> Maharaj / Maharaj Ji (Pandit)</li>
-          <li><strong>Designations:</strong> Cyber Engineer | Web Designer | Visual Storyteller | Explorer[span_67](start_span)[span_67](end_span)[span_68](start_span)[span_68](end_span)</li>
-          <li><strong>Base Location:</strong> Raipur, Chhattisgarh, India 🇮🇳[span_69](start_span)[span_69](end_span)</li>
-          <li><strong>Universal Handle:</strong> @xsagarmishra (Official handle across all platforms)[span_70](start_span)[span_70](end_span)</li>
-        </ul>
+      <h2>8. Official Digital Directory & Social Connect</h2>
+      <div class="social-grid">
+        <a href="https://youtube.com/@xsagarmishra" target="_blank" class="social-card">
+          <strong>YouTube</strong>
+          <span>@xsagarmishra • Videos & Tech</span>
+        </a>
+        <a href="https://instagram.com/xsagarmishra" target="_blank" class="social-card">
+          <strong>Instagram</strong>
+          <span>@xsagarmishra • Visuals & Rides</span>
+        </a>
+        <a href="https://facebook.com/xsagarmishra" target="_blank" class="social-card">
+          <strong>Facebook</strong>
+          <span>@xsagarmishra • Community</span>
+        </a>
+        <a href="https://snapchat.com/add/xsagarmishra" target="_blank" class="social-card">
+          <strong>Snapchat</strong>
+          <span>@xsagarmishra • Daily Snaps</span>
+        </a>
+        <a href="https://x.com/xsagarmishra" target="_blank" class="social-card">
+          <strong>X (Twitter)</strong>
+          <span>@xsagarmishra • Tech & Cyber</span>
+        </a>
+        <a href="https://threads.net/@xsagarmishra" target="_blank" class="social-card">
+          <strong>Threads</strong>
+          <span>@xsagarmishra • Conversations</span>
+        </a>
+        <a href="https://github.com/xsagarmishra" target="_blank" class="social-card">
+          <strong>GitHub</strong>
+          <span>@xsagarmishra • Code & Repos</span>
+        </a>
+        <a href="https://google.com/search?q=xsagarmishra" target="_blank" class="social-card">
+          <strong>Google</strong>
+          <span>xsagarmishra • Verified Search</span>
+        </a>
+        <div class="social-card">
+          <strong>Other Platforms</strong>
+          <span>@xsagarmishra • Universal Presence</span>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <strong>🤝 Collaborate & Reach Out</strong>
+        <p style="margin: 8px 0 0 0; font-size: 0.95rem;">"Whether brainstorming secure AI architectures, discussing highway routes and visual cinematography, or expanding networks — reach out via @xsagarmishra."</p>
       </div>
     </div>
 
-    <!-- HINDI CONTENT -->
+    <!-- HINDI VERSION -->
     <div id="lang-hindi" class="lang-block">
-      <h2>1. परिचय (About Sagar)</h2>
-      <p>सागर मिश्रा रायपुर, छत्तीसगढ़ के एक साइबर इंजीनियर, वेब डिज़ाइनर और विजुअल स्टोरीटेलर हैं[span_71](start_span)[span_71](end_span)[span_72](start_span)[span_72](end_span)। वे डिजिटल आर्किटेक्चर और रचनात्मक मीडिया के संगम पर कार्य करते हैं[span_73](start_span)[span_73](end_span)[span_74](start_span)[span_74](end_span)। आधुनिक कंप्यूटर प्रणालियों को डिज़ाइन करना और उन्हें साइबर खतरों से सुरक्षित रखना उनका मुख्य उद्देश्य है[span_75](start_span)[span_75](end_span)[span_76](start_span)[span_76](end_span) |</p>
+      <div class="quote-box">
+        "वैदिक शुद्धता से मिला अनुशासन, कठिन संघर्ष से उपजी शक्ति, और आधुनिक तकनीक का अभेद्य सुरक्षा चक्र — Build. Secure. Explore."
+      </div>
 
-      <h2>2. सांस्कृतिक जड़ें एवं संस्कार</h2>
-      <p>एक पंडित परिवार की परंपरा और संस्कारों से जुड़े होने के कारण, उनके क्षेत्र और सामाजिक दायरे में लोग उन्हें आदरपूर्वक <strong>'महाराज'</strong> या <strong>'महाराज जी'</strong> कहकर संबोधित करते हैं। अपने संस्कारों से प्राप्त अनुशासन, सत्यनिष्ठा और ज्ञान की खोज को वे आधुनिक डिजिटल तकनीक के साथ जोड़कर आगे बढ़ते हैं।</p>
+      <h2>1. परिचय एवं दृष्टिकोण (About Sagar)</h2>
+      <p>सागर मिश्रा रायपुर, छत्तीसगढ़ के एक तकनीकी पेशेवर और डिजिटल निर्माता हैं, जो <strong>आर्टिफिशियल इंटेलिजेंस (AI)</strong>, <strong>साइबर इंजीनियरिंग</strong> और उत्कृष्ट विजुअल डिज़ाइन के संगम पर कार्य करते हैं। उनका मुख्य ध्येय इंटेलिजेंट कंप्यूटिंग मॉडल्स को आकार देना, सुदृढ़ वेब प्लेटफॉर्म्स तैयार करना और संवेदनशील डिजिटल बुनियादी ढांचे को हर प्रकार के उन्नत साइबर हमलों से अभेद्य सुरक्षा प्रदान करना है। स्क्रीन से परे, वे एक शांत, निर्भीक और निरंतर सीखने वाले व्यक्तित्व के धनी हैं।</p>
 
-      <h2>3. सफर की शुरुआत</h2>
-      <p>छत्तीसगढ़ से शुरू हुए इस सफर में सागर की रुचि आरंभ से ही कंप्यूटर संरचना, लॉजिक और कोडिंग में रही[span_77](start_span)[span_77](end_span)[span_78](start_span)[span_78](end_span)। उन्होंने समझा कि इंटरनेट पर सशक्त उपस्थिति के लिए आकर्षक वेब डिज़ाइन और सुदृढ़ साइबर सुरक्षा दोनों का संतुलन अत्यंत आवश्यक है[span_79](start_span)[span_79](end_span)[span_80](start_span)[span_80](end_span) |</p>
-
-      <h2>4. मुख्य तकनीकी सिद्धांत</h2>
-      <p>सागर का तकनीकी कार्यप्रवाह उनके तीन प्रमुख सिद्धांतों पर आधारित है: <strong>"Design → Deploy → Defend"</strong>[span_81](start_span)[span_81](end_span):</p>
+      <h2>2. वैदिक विरासत, संस्कार एवं परंपरा (Cultural Identity)</h2>
+      <p>अपने क्षेत्र और सामाजिक दायरे में सागर को आदरपूर्वक <strong>'महाराज'</strong> या <strong>'महाराज जी'</strong> कहकर संबोधित किया जाता है। यह पहचान पीढ़ियों पुरानी पवित्र परंपरा का प्रतीक है:</p>
       <ul>
-        <li><strong>Design:</strong> तेज़, सहज और आधुनिक वेब इंटरफेस तैयार करना जो दिखने और चलने में प्रभावी हों[span_82](start_span)[span_82](end_span)।</li>
-        <li><strong>Deploy:</strong> विचारों और कोड को सुचारू रूप से लाइव प्लेटफॉर्म पर स्थापित करना[span_83](start_span)[span_83](end_span)।</li>
-        <li><strong>Defend:</strong> साइबर खतरों से सुरक्षा, सुरक्षा कमियों की पहचान और डिजिटल सिस्टम को सुरक्षित रखना[span_84](start_span)[span_84](end_span)[span_85](start_span)[span_85](end_span)।</li>
+        <li><strong>वैदिक पंडित परंपरा:</strong> उनके पूर्वज प्रतिष्ठित वैदिक पंडित रहे हैं, जहां सनातन धर्म, वेद-शास्त्र और अनुष्ठानिक मर्यादाओं के प्रति निष्ठा कुल के इतिहास में अनवरत चली आ रही है।</li>
+        <li><strong>नाना जी एवं मामा जी से प्राप्त ज्ञान:</strong> सागर ने पंडिताई, वैदिक पूजा-विधान, शुद्ध मंत्रोच्चार और नियमों की सीख सीधे अपने <strong>नाना जी</strong> एवं <strong>मामा जी</strong> के पावन मार्गदर्शन और आशीर्वाद से प्राप्त की है।</li>
+        <li><strong>द्विविध अनुशासन (The Dual Rigor):</strong> <em>"वैदिक मंत्रों और अनुष्ठानों में शुद्धता व कड़े नियम अनिवार्य होते हैं — ठीक यही एकाग्रता और शून्य-त्रुटि अनुशासन AI मॉडल्स और साइबर सुरक्षा में अपेक्षित होता है।"</em> यही संस्कार उनकी तकनीकी सोच को नैतिक आधार प्रदान करते हैं।</li>
       </ul>
 
-      <h2>5. विजुअल मीडिया और रचनात्मक प्रस्तुति</h2>
-      <p>कंप्यूटर स्क्रीन से परे, सागर फोटोग्राफी और विजुअल स्टोरीटेलिंग में सक्रिय रहते हैं[span_86](start_span)[span_86](end_span)[span_87](start_span)[span_87](end_span)। वे फ्रेम कंपोजिशन, रोशनी और रंगों के संतुलन को एक इंजीनियर की बारीकी के साथ प्रस्तुत करते हैं[span_88](start_span)[span_88](end_span)[span_89](start_span)[span_89](end_span)।</p>
-
-      <h2>6. यात्रा एवं मोटरबाइक का सफर</h2>
-      <p>तकनीकी कार्य के साथ संतुलन बनाए रखने के लिए सागर राजमार्गों और बाइक यात्राओं पर निकलते हैं[span_90](start_span)[span_90](end_span)[span_91](start_span)[span_91](end_span)। छत्तीसगढ़ के सुंदर प्राकृतिक मार्गों और नए स्थानों को बाइक पर खोजना और उन्हें संजोना उनकी जीवनशैली का हिस्सा है[span_92](start_span)[span_92](end_span)[span_93](start_span)[span_93](end_span) |</p>
-
-      <h2>7. जीवन दर्शन</h2>
-      <p>सागर का कार्य और दृष्टिकोण तीन शब्दों पर केंद्रित है: <strong>"Build. Secure. Explore."</strong>[span_94](start_span)[span_94](end_span)</p>
+      <h2>3. संघर्ष, कठिन दौर एवं जुझारू प्रवृत्ति (Resilience)</h2>
+      <p>जीवन ने सागर को हर कदम पर परखा है, और उनका व्यक्तित्व आसान रास्तों से नहीं, बल्कि तूफानों से लड़कर गढ़ा गया है:</p>
       <ul>
-        <li><strong>Build:</strong> उपयोगी डिजिटल टूल्स और प्लेटफॉर्म का निर्माण करना[span_95](start_span)[span_95](end_span)[span_96](start_span)[span_96](end_span)।</li>
-        <li><strong>Secure:</strong> प्रणालियों और डेटा की सुरक्षा को सर्वोच्च प्राथमिकता देना[span_97](start_span)[span_97](end_span)[span_98](start_span)[span_98](end_span)।</li>
-        <li><strong>Explore:</strong> नई तकनीकों और जीवन के नए अनुभवों का अन्वेषण करना[span_99](start_span)[span_99](end_span)[span_100](start_span)[span_100](end_span)।</li>
+        <li><strong>विषम परिस्थितियां:</strong> उन्होंने जीवन में गहरा संघर्ष देखा है, विपरीत समय का सामना किया है और कठिन दौर से अकेले जूझे हैं। हर कठिनाई ने उन्हें और अधिक संकल्पित और सुदृढ़ बनाया है।</li>
+        <li><strong>अटल संकल्प:</strong> उनका स्पष्ट सिद्धांत है — <em>"जब तक मेरा लक्ष्य प्राप्त नहीं हो जाता, तब तक मैं हर बाधा से डटकर लड़ूंगा और निरंतर संघर्ष करता रहूंगा।"</em></li>
       </ul>
 
-      <h2>8. डिजिटल पहचान एवं सोशल उपस्थिति</h2>
-      <div class="identity-box">
+      <h2>4. मुख्य तकनीकी आधार एवं स्तंभ</h2>
+      <p>उनका तकनीकी कार्यप्रवाह तीन प्रमुख सिद्धांतों पर आधारित है: <strong>"Innovate → Build → Defend"</strong>:</p>
+      <ul>
+        <li><strong>आर्टिफिशियल इंटेलिजेंस (AI):</strong> मशीन लर्निंग मॉडल्स पर कार्य करना, इंटेलिजेंट ऑटोमेशन बनाना और वास्तविक समस्याओं के समाधान हेतु AI तैनात करना।</li>
+        <li><strong>साइबर इंजीनियरिंग एवं सुरक्षा:</strong> सिस्टम्स की पूर्ण सुरक्षा सुनिश्चित करना, गहरी सुरक्षा कमियों (Vulnerabilities) की पहचान और बुनियादी ढांचे की रक्षा करना।</li>
+        <li><strong>वेब आर्किटेक्चर एवं UI:</strong> तेज़, आधुनिक और हल्के वेब इंटरफेस तैयार करना जो प्रदर्शन में सुचारू और देखने में सुरुचिपूर्ण हों।</li>
+      </ul>
+
+      <h2>5. रुचियां, रचनात्मक संसार एवं जीवनशैली</h2>
+      <ul>
+        <li><strong>विजुअल आर्किटेक्ट (वीडियोग्राफी एवं सिनेमैटिक फ्रेमिंग):</strong> वास्तविक पलों, कैमरों के कोणों, रोशनी और परछाइयों के संतुलन को संजोकर हर फ्रेम को एक सजीव कहानी का रूप देना।</li>
+        <li><strong>अनथक अन्वेषक (यात्रा एवं मोटरबाइक):</strong> दोपहिया वाहन पर राजमार्गों और घाटियों की यात्रा करना उनके लिए मानसिक साधना के समान है, जिससे उन्हें नई ऊर्जा और स्पष्ट सोच मिलती है।</li>
+        <li><strong>संगीत:</strong> कोडिंग के दौरान गहरी एकाग्रता बनाए रखने और यात्रा में स्फूर्ति देने वाला एक अनिवार्य साथी।</li>
+        <li><strong>नेटवर्किंग एवं सामाजिक संवाद:</strong> नए लोगों से मिलना, वैचारिक आदान-प्रदान करना और सच्चे मानवीय रिश्ते जोड़ना।</li>
+      </ul>
+
+      <h2>6. वर्तमान स्थिति एवं सक्रिय लक्ष्य</h2>
+      <div class="info-card">
         <ul>
-          <li><strong>पूरा नाम:</strong> सागर मिश्रा[span_101](start_span)[span_101](end_span)[span_102](start_span)[span_102](end_span)</li>
-          <li><strong>स्थानीय संबोधन:</strong> महाराज / महाराज जी (पंडित)</li>
-          <li><strong>पदनाम:</strong> Cyber Engineer | Web Designer | Visual Storyteller | Explorer[span_103](start_span)[span_103](end_span)[span_104](start_span)[span_104](end_span)</li>
-          <li><strong>स्थान:</strong> रायपुर, छत्तीसगढ़, भारत 🇮🇳[span_105](start_span)[span_105](end_span)</li>
-          <li><strong>यूनिवर्सल हैंडल:</strong> @xsagarmishra (सभी सोशल मीडिया प्लेटफॉर्म्स पर)[span_106](start_span)[span_106](end_span)</li>
+          <li><strong>इंजीनियरिंग:</strong> सुरक्षित AI प्रणालियों और उन्नत साइबर सुरक्षा पद्धतियों पर गहन कार्य।</li>
+          <li><strong>अन्वेषण:</strong> मध्य भारत के प्राकृतिक और अनदेखे राजमार्गों को बाइक पर प्रलेखित करना।</li>
+          <li><strong>मानसिकता:</strong> वैदिक संस्कारों और अत्याधुनिक कंप्यूटिंग के मध्य निरंतर संतुलन साधना।</li>
         </ul>
+      </div>
+
+      <h2>7. जीवन दर्शन (Personal Ethos)</h2>
+      <p>उनका जीवन तीन शब्दों के मार्गदर्शक पर आधारित है: <strong>"Build. Secure. Explore."</strong></p>
+      <ul>
+        <li><strong>Build:</strong> उपयोगी डिजिटल टूल्स और मानवीय संबंधों का निर्माण करना।</li>
+        <li><strong>Secure:</strong> डेटा, नैतिकता, मर्यादा और संस्कारों की सदैव रक्षा करना।</li>
+        <li><strong>Explore:</strong> नई तकनीकों, नए मार्गों और नए अनुभवों की ओर निरंतर अग्रसर रहना।</li>
+      </ul>
+
+      <h2>8. आधिकारिक डिजिटल निर्देशिका एवं सोशल हैंडल्स</h2>
+      <div class="social-grid">
+        <a href="https://youtube.com/@xsagarmishra" target="_blank" class="social-card">
+          <strong>YouTube</strong>
+          <span>@xsagarmishra • वीडियो एवं तकनीक</span>
+        </a>
+        <a href="https://instagram.com/xsagarmishra" target="_blank" class="social-card">
+          <strong>Instagram</strong>
+          <span>@xsagarmishra • विजुअल्स एवं यात्रा</span>
+        </a>
+        <a href="https://facebook.com/xsagarmishra" target="_blank" class="social-card">
+          <strong>Facebook</strong>
+          <span>@xsagarmishra • समुदाय</span>
+        </a>
+        <a href="https://snapchat.com/add/xsagarmishra" target="_blank" class="social-card">
+          <strong>Snapchat</strong>
+          <span>@xsagarmishra • दैनिक स्नैप्स</span>
+        </a>
+        <a href="https://x.com/xsagarmishra" target="_blank" class="social-card">
+          <strong>X (Twitter)</strong>
+          <span>@xsagarmishra • तकनीक एवं विचार</span>
+        </a>
+        <a href="https://threads.net/@xsagarmishra" target="_blank" class="social-card">
+          <strong>Threads</strong>
+          <span>@xsagarmishra • वार्तालाप</span>
+        </a>
+        <a href="https://github.com/xsagarmishra" target="_blank" class="social-card">
+          <strong>GitHub</strong>
+          <span>@xsagarmishra • कोड एवं रिपॉजिटरीज़</span>
+        </a>
+        <a href="https://google.com/search?q=xsagarmishra" target="_blank" class="social-card">
+          <strong>Google</strong>
+          <span>xsagarmishra • सत्यापित खोज</span>
+        </a>
+        <div class="social-card">
+          <strong>अन्य प्लेटफॉर्म्स</strong>
+          <span>@xsagarmishra • सार्वभौमिक उपस्थिति</span>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <strong>🤝 संवाद एवं सहयोग</strong>
+        <p style="margin: 8px 0 0 0; font-size: 0.95rem;">"सुरक्षित डिजिटल प्रणालियों के निर्माण, राजमार्गों की यात्राओं, विजुअल सिनेमैटोग्राफी अथवा नेटवर्किंग हेतु — मुझसे @xsagarmishra पर संपर्क कर सकते हैं।"</p>
       </div>
     </div>
 
@@ -329,25 +562,27 @@
   </div>
 
   <script>
-    function setLanguage(lang, btnElement) {
-      var blocks = document.querySelectorAll('.lang-block');
-      for (var i = 0; i < blocks.length; i++) {
-        blocks[i].classList.remove('active');
-      }
+    function setLang(lang) {
+      document.getElementById('lang-hinglish').style.display = 'none';
+      document.getElementById('lang-english').style.display = 'none';
+      document.getElementById('lang-hindi').style.display = 'none';
 
-      var buttons = document.querySelectorAll('.lang-btn');
-      for (var j = 0; j < buttons.length; j++) {
-        buttons[j].classList.remove('active');
-      }
+      document.getElementById('btn-hinglish').classList.remove('active');
+      document.getElementById('btn-english').classList.remove('active');
+      document.getElementById('btn-hindi').classList.remove('active');
 
-      var selected = document.getElementById('lang-' + lang);
-      if (selected) {
-        selected.classList.add('active');
-      }
-      if (btnElement) {
-        btnElement.classList.add('active');
-      }
+      document.getElementById('lang-' + lang).style.display = 'block';
+      document.getElementById('btn-' + lang).classList.add('active');
+    }
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
     }
   </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
